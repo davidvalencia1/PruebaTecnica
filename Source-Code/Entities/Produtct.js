@@ -11,3 +11,5 @@ class Product {
           this.createdAt = createdAt || new Date();
      }
 }
+
+module.exports = Product;
