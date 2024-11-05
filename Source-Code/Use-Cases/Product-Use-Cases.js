@@ -47,7 +47,8 @@ class ProductUseCases {
                price !== undefined ? price : existingProduct.price,
                category !== undefined ? category : existingProduct.category
           );
-          (updatedProduct.id = existingProduct.id), // Mantiene el ID existente
+          updatedProduct.id = existingProduct.id // Mantiene el ID existente
+          updatedProduct.createdAt = existingProduct.createdAt // Mantiene la fecha de creacion
                // Guarda el producto actualizado en el repositorio y despues lo devuelve
                await this.productRepository.save(updatedProduct);
 
