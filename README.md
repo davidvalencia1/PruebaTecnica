@@ -2,9 +2,7 @@
 # Prueba Tecnica  
 Este proyecto es te proyecto tiene como objetivo responder al requerimiento de una API RESTful utilizando Node.js y respetando los principios de Clean Architecture 
 
-A brief description of what this project does and who it's for
-
-Requisitos: 
+## Requisitos: 
  
 Node Version v18.16.0 o superior    
 
@@ -26,7 +24,7 @@ Instrucciones de ejecucion:
    7. Listo!! el proyecto estara corriendo en el puerto 3000
 
 
-Decisiones de diseño y estructura:
+## Decisiones de diseño y estructura:
 Para este proyecto se decidio usar Nodejs junto con Express para facilitar la implementacion de la api
   Bajo clean architecture se estructurizo el proyecto en 5 capas
   1. Entidades: Definicion de modelos del dominio
