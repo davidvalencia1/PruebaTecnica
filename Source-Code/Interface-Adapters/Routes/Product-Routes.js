@@ -4,9 +4,13 @@ const validateProductData = require("../../Frameworks-Drivers/Middlewares/Data-V
 const emptyDateValidate = require("../../Frameworks-Drivers/Middlewares/Empty-Date");
 const validateProductOptionalData = require("../../Frameworks-Drivers/Middlewares/Data-Optional-Validate");
 const validateProductId = require("../../Frameworks-Drivers/Middlewares/IdValidate");
+const authMiddleware = require("../../Frameworks-Drivers/Middlewares/Auth");
 
 const router = express.Router();
 const productController = new ProductController();
+
+// Se aplica el middleware de auth sobre todas las rutasde de product
+router.use(authMiddleware);
 
 // Se indican las rutas para el controlador de Product
 // Ruta para agregar un producto, se Valida que no este vacio y que los datos sean correctos
