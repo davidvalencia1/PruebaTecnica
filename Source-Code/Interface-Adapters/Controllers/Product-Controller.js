@@ -22,7 +22,7 @@ class ProductController {
 
      async listProducts(req, res) {
           try {
-               const arrayProducts = await this.productUseCases.listProducts(); 
+               const arrayProducts = await this.productUseCases.listProduct();
                res.status(200).json(arrayProducts);
           } catch (error) {
                res.status(500).json({ error: error.message });
@@ -36,7 +36,7 @@ class ProductController {
                );
                res.status(200).json(product);
           } catch (error) {
-               res.status(500).json({ error: error.messag }); 
+               res.status(500).json({ error: error.message });
           }
      }
 
@@ -53,7 +53,7 @@ class ProductController {
                );
                res.status(200).json(product);
           } catch (error) {
-               res.status(500).json({ err: error.message }); 
+               res.status(500).json({ error: error.message });
           }
      }
 
@@ -62,7 +62,7 @@ class ProductController {
                const response = await this.productUseCases.deleteProduct(
                     req.params.id
                );
-               res.status(204).json(response); 
+               res.status(200).json(response);
           } catch (error) {
                res.status(500).json({ error: error.message });
           }
