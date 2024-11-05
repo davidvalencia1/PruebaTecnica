@@ -37,12 +37,12 @@ class ProductUseCases {
           // Crea un nuevo objeto Product, si el parametro pasado no esta definido usa los parametros
           // del producto ya existe
           const updatedProduct = new Product(
-              existingProduct.id,  // Mantiene el ID existente
               name !== undefined ? name : existingProduct.name,
               description !== undefined ? description : existingProduct.description,
               price !== undefined ? price : existingProduct.price,
               category !== undefined ? category : existingProduct.category
           );
+          updatedProduct.id = existingProduct.id,  // Mantiene el ID existente
       
           // Guarda el producto actualizado en el repositorio y despues lo devuelve
           await this.productRepository.save(updatedProduct);
