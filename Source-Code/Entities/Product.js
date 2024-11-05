@@ -1,8 +1,8 @@
 
 class Product {
-     constructor(id, name, description, price, category, createdAt) {
+     constructor( name, description, price, category, createdAt) {
           //Asignacion de valores a las propiedades del producto desde los parametros del contructor
-          this.id = id;
+          this.id = null;
           this.name = name;
           this.description = description;
           this.price = price;
