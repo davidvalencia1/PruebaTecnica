@@ -9,6 +9,7 @@ class Product {
           this.category = category;
           //Se asigna la fecha actual si no se pasa un valor al contructor
           this.createdAt = createdAt || new Date();
+          this.updatedAt = null;
      }
 }
 

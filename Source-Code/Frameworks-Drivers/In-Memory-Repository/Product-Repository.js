@@ -22,7 +22,7 @@ const products = [
           description: "Deliniador de alta durabilidad",
           price: 15000,
           category: "Cosmetica",
-          createdAt: "2024-10-25",
+          createdAt: "2024-10-25"
      },
 ];
 
