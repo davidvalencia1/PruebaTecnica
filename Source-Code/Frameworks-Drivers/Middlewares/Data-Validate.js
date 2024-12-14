@@ -10,7 +10,7 @@ const validateProductData = [
           .withMessage("Description debe ser string"),
      check("price")
           .isNumeric()
-          .withMessage("Price debe ser un nomero")
+          .withMessage("Price debe ser un numero")
           .isFloat({ gt: 0 })
           .withMessage("Price debe ser un numero positivo"),
      check("category").isString().withMessage("Category debe ser string"),

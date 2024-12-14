@@ -14,7 +14,7 @@ const emptyDateValidate = [
      check("category")
           .not()
           .isEmpty()
-          .withMessage("categoryno puede ser una cadena vacia"),
+          .withMessage("category no puede ser una cadena vacia"),
 
      // Manejo de errores como middleware
      (req, res, next) => {
