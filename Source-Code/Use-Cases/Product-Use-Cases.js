@@ -63,9 +63,8 @@ class ProductUseCases {
 
      async deleteProduct(id) {
           // Busca un producto y lo elimina, en caso de que no exista retorna error
-          const product = await this.productRepository.findById(id);
-          if (!product) throw new Error("Product not found");
-          this.productRepository.delete(id);
+          const deleteProduct = await this.productRepository.delete(id);
+          if (!deleteProduct) throw new Error("Product not delete");
           return "delete product correctly";
      }
 }
