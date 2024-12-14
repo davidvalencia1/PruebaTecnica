@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const productRoutes = require("../Interface-Adapters/Routes/Product-Routes");
 const login = require("../Interface-Adapters/Routes/Login");
+const connectDB = require("../Frameworks-Drivers/Config/BD");
 
 const app = express();
 app.use(bodyParser.json());
@@ -29,8 +30,9 @@ app.use((err, req, res, next) => {
      res.status(500).json({ error: "an error occurred" });
 });
 
-//Iniciar servidor en el puerto 3000
+// Conectar con la base de datos e iniciar servidor en el puerto 3000
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
+     connectDB();
      console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
