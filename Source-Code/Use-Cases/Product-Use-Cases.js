@@ -36,8 +36,6 @@ class ProductUseCases {
           // Busca el producto existente por ID
           const existingProduct = await this.productRepository.findById(id);
           if (!existingProduct) throw new Error("Product not found");
-          
-
           // Crea un nuevo objeto Product, si el parametro pasado no esta definido usa los parametros
           // del producto ya existe
           const updateAtN = new Date().toISOString();
@@ -49,14 +47,14 @@ class ProductUseCases {
                price !== undefined ? price : existingProduct.price,
                category !== undefined ? category : existingProduct.category
           );
-          updatedProduct.id = existingProduct.id // Mantiene el ID existente
-          updatedProduct.createdAt = existingProduct.createdAt // Mantiene la fecha de creacion
-          updatedProduct.updatedAt = updateAtN
+          updatedProduct._id = existingProduct._id; // Mantiene el ID existente
+          updatedProduct.createdAt = existingProduct.createdAt; // Mantiene la fecha de creacion
+          updatedProduct.updatedAt = updateAtN;
 
-               // Guarda el producto actualizado en el repositorio y despues lo devuelve
-               await this.productRepository.save(updatedProduct);
-               
-          return await this.productRepository.findById(updatedProduct.id);
+          // Guarda el producto actualizado en el repositorio y despues lo devuelve
+          await this.productRepository.save(updatedProduct);
+
+          return await this.productRepository.findById(updatedProduct._id);
      }
 
      async deleteProduct(id) {
