@@ -9,7 +9,11 @@ class ProductUseCases {
 
      async createProduct(name, description, price, category) {
           // Crea un producto asignadole la fecha de creacion antes de hacerlo
-          const createdAt = new Date().toISOString();
+          // Se asigna una fecha de creacion en UTC -5
+          const now = new Date();
+          const createdAt = new Date(
+               now.getTime() - 5 * 60 * 60 * 1000
+          ).toISOString();
           const product = new Product(
                name,
                description,
